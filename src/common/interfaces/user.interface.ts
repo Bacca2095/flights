@@ -1,4 +1,4 @@
-export interface IUser extends Document {
+export interface IUser {
   name: string;
   username: string;
   email: string;
