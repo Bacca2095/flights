@@ -20,6 +20,8 @@ export class AllExceptionFilter implements ExceptionFilter {
       : HttpStatus.INTERNAL_SERVER_ERROR;
     const message = isHttpException ? exception.getResponse() : exception;
 
+    this.logger.error(`Status:${status} Error:${JSON.stringify(message)}`);
+
     const exceptionResponse: IExceptionResponse = {
       date: new Date().toISOString(),
       path: request.url,
